@@ -1,0 +1,27 @@
+<h1>{{name}}</h1>
+
+<dl>
+  <td class="fw-bold">Nombre:</td>
+  <dd class="fw-semibold"> {{name}} </dd>
+
+  <td class="fw-bold">Edad:</td>
+  <dd class="fw-semibold"> {{age}} </dd>
+
+  <td class="fw-bold">M&eacute;todo:</td>
+  <dd class="fw-semibold"> {{getHeroDescription()}} </dd>
+
+  <td class="fw-bold">Capitalizado:</td>
+  <dd class="fw-semibold"> {{capitalizedName}} </dd>
+</dl>
+
+<button *ngIf="name !== 'Wonder Woman'" (click)="changeName()"  class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<button *ngIf="age !== 29" (click)="changeAge()"  class="btn btn-primary mx-2">
+  Cambiar edad
+</button>
+
+<button (click)="resetData()"  class="btn btn-primary">
+  Reset
+</button>

@@ -1,0 +1,17 @@
+<h3>Listado de Héroes</h3>
+
+<div *ngIf="nameHeroDeleted; else showMessageNoDelete">
+  <h3>Héroe borrado <small class="text-danger">{{nameHeroDeleted}}</small></h3>
+</div>
+//Los templates es como un div pero este hace que no se muestrea menos que si debiera
+<ng-template #showMessageNoDelete>
+  <h3>No se ha borrado nada.</h3>
+</ng-template>
+
+<button *ngIf="HeroNames.length > 0" (click)="removeLastHero()" class ="btn btn-outline-danger">
+  Borrar último héroe
+</button>
+
+<ul class = "mt-2 list-group">
+  <li *ngFor="let name of HeroNames" class = "list-group-item">{{name}}</li>
+</ul>
